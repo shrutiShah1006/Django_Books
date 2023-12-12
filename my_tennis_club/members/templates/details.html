@@ -1,0 +1,62 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Member Details of {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
+
+{% block content %}
+    <style>
+        /* Inline CSS */
+        body {
+            background-color: #e9ecef; /* Set background color */
+            color: #333; /* Set text color */
+            font-family: 'Arial', sans-serif; /* Set font family */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px; /* Set maximum width for content */
+            margin: 30px auto; /* Center-align the content */
+            padding: 20px; /* Add padding for better readability */
+            background-color: #fff; /* Set content background to white */
+            border-radius: 8px; /* Add rounded corners to the container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+        }
+
+        h1 {
+            color: #4a90e2; /* Change heading color to a shade of blue */
+            font-size: 36px; /* Increase heading font size */
+            text-align: center; /* Center-align the heading */
+            margin-top: 0; /* Remove default margin from top */
+        }
+
+        h3 {
+            color: #1abc9c; /* Change subheading color to a shade of green */
+            font-size: 24px; /* Set font size for subheading */
+        }
+
+        p {
+            font-size: 18px; /* Set font size for paragraphs */
+            line-height: 1.6; /* Increase line-height for better readability */
+            margin-bottom: 15px; /* Add space between paragraphs */
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: #f39c12; /* Change link color to a shade of orange */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline link on hover */
+        }
+    </style>
+
+    <div class="container">
+        <h1>{{ mymember.firstname }}</h1>
+        <h3>Author: {{ mymember.lastname }}</h3>
+        <p>Sap Id: {{ mymember.phone }}</p>
+        <p>Issued On: {{ mymember.birthday }}</p>
+        <p>Back to <a href="/members">Books List</a></p>
+    </div>
+{% endblock %}

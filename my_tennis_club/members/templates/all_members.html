@@ -1,0 +1,64 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Book List - List of all books
+{% endblock %}
+
+{% block content %}
+    <style>
+        /* Inline CSS */
+        body {
+            background-color: black; /* Set a light gray background */
+            color: #333; /* Set text color to dark gray */
+            font-family: Arial, sans-serif; /* Set font family */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6; /* Increase line-height for better readability */
+        }
+
+        .container {
+            max-width: 800px; /* Set maximum width for content */
+            margin: 0 auto; /* Center-align the content */
+            padding: 20px; /* Add padding for better readability */
+            background-color: #fff; /* Set content background to white */
+            border-radius: 80px; /* Add rounded corners to the container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+        }
+
+        h1 {
+            color: red; /* Change heading color to a shade of blue */
+            font-size: 50px; /* Increase heading font size */
+            margin-top: 0; /* Remove default margin from top */
+            text-align: center; /* Center-align the heading */
+        }
+
+        ul {
+            list-style-type: none; /* Remove bullet points from list */
+            padding: 0;
+            margin-top: 20px; /* Add space at the top of the list */
+        }
+
+        li {
+            margin-bottom: 10px; /* Add space between list items */
+        }
+
+        a {
+            text-decoration: none; /* Remove underline from links */
+            color: green; /* Change link color to orange */
+        }
+
+        a:hover {
+            font-size: 20px;
+            text-decoration: underline; /* Underline link on hover */
+        }
+    </style>
+
+    <div class="container">
+        <h1>Movie</h1>
+        <ul>
+            {% for x in mymembers %}
+                <li><a href="details/{{x.id}}">{{x.firstname}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
